@@ -1,2 +1,39 @@
-%h1 Welcome
-=link_to 'Sign out', sign_out_path
+.app-content
+  .container
+    .page-content
+      .col-md-3.no-padding
+        .card.no-padding.clearfix.user-profile
+          %div{style: "height: 100px; background-color: #1DA1F2;"}
+          %div
+            .col-md-4
+              = image_tag 'https://pbs.twimg.com/profile_images/527390577411645441/-5ElXiOd_bigger.jpeg', class: 'avatar'
+            .col-md-8
+              %strong
+                %span Vi Cruz 
+              %br
+              %span @vicruz
+              %br
+            .col-md-12
+              .col-md-4
+                Tweets
+                %b
+                  12
+              .col-md-4
+                Following
+                %b
+                  12
+              .col-md-4
+                Followers
+                %b
+                  12
+        .card
+          Trends
+      .col-md-6.no-padding
+        .card
+          tweets
+      .col-md-3.no-padding
+        .card
+          Who to follow
+        .card
+          Ads
+    

@@ -1,3 +1,13 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-profile {
+    position: relative;
+    .avatar {
+        border-radius: 50px;
+        border: 3px solid #fff;
+        position: relative;
+        top: -35px;
+    }
+}

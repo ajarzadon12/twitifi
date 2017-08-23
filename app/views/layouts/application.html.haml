@@ -6,13 +6,57 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body.container
-    - if notice
-      .alert.alert-success.alert-dismissable.fade.in
-        %a.close{'aria-label': 'close', 'data-dismiss': 'alert', href: '#'} &times;
-        = notice
-    - if alert
-      .alert.alert-danger.alert-dismissable.fade.in
-        %a.close{'aria-label': 'close', 'data-dismiss': 'alert', href: '#'} &times;
-        = alert
-    = yield
+  %body
+    %nav.navbar.navbar-default.navbar-fixed-top
+      %div.container
+        .col-md-9
+          %div.collapse.navbar-collapse
+            - unless user_signed_in?
+              %ul.nav.navbar-nav
+                %li.-with-brand
+                  %a
+                    = image_tag 'twitif.png', size: '30x30'
+                    %strong
+                      Home
+                %li
+                  %a
+                    %strong
+                      About
+            - else
+              %ul.nav.navbar-nav
+                %li
+                  %a
+                    %span.glyphicon.glyphicon-home
+                    %strong
+                      Home
+                %li
+                  %a
+                    %span.glyphicon.glyphicon-bell
+                    %strong
+                      Notification
+
+                %li
+                  %a
+                    %span.glyphicon.glyphicon-envelope
+                    %strong
+                      Messages
+        - unless user_signed_in?
+          .col-md-3
+            .i18n-container
+              Languange: 
+              .btn-group
+                %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+                  English
+                  %span.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} English
+                  %li
+                    %a{:href => "#"} Filipino
+                  %li
+                    %a{:href => "#"} Chtulhu
+        - else
+          .col-md-3
+            =link_to 'Sign out', sign_out_path
+    %div
+      = yield
