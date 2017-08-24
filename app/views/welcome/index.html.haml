@@ -1,39 +1,71 @@
 .app-content
   .container
-    .page-content
-      .col-md-3.no-padding
-        .card.no-padding.clearfix.user-profile
-          %div{style: "height: 100px; background-color: #1DA1F2;"}
-          %div
+    .col-md-3.no-padding
+      .card.no-padding.clearfix.user-profile
+        %div{style: "height: 100px; background-color: #1DA1F2;"}
+        %div
+          .col-md-4
+            = image_tag 'https://pbs.twimg.com/profile_images/527390577411645441/-5ElXiOd_bigger.jpeg', class: 'avatar'
+          .col-md-8
+            %strong
+              %span Vi Cruz 
+            %br
+            %span.text-muted @vicruz
+            %br
+          .col-md-12
             .col-md-4
-              = image_tag 'https://pbs.twimg.com/profile_images/527390577411645441/-5ElXiOd_bigger.jpeg', class: 'avatar'
-            .col-md-8
-              %strong
-                %span Vi Cruz 
-              %br
-              %span @vicruz
-              %br
-            .col-md-12
-              .col-md-4
-                Tweets
-                %b
-                  12
-              .col-md-4
-                Following
-                %b
-                  12
-              .col-md-4
-                Followers
-                %b
-                  12
-        .card
-          Trends
-      .col-md-6.no-padding
-        .card
-          tweets
-      .col-md-3.no-padding
-        .card
-          Who to follow
-        .card
-          Ads
-    
+              %b.text-muted Tweets
+              %b.text-info
+                12
+            .col-md-4
+              %b.text-muted Following
+              %b.text-info
+                12
+            .col-md-4
+              %b.text-muted Followers
+              %b.text-info
+                12
+      .card.clearfix
+        %h4
+          %strong
+            Compose new twit
+        %hr
+        %textarea.form-control
+        %div.pull-right.sm-padding
+          %span.text-muted 140
+          %button.btn.btn-info
+            Twit
+    .col-md-6.no-padding
+      .card
+        - 30.times do |ntime|
+          %div.twits.clearfix
+            .col-md-1.no-padding
+              = image_tag 'https://s3.amazonaws.com/mypresonus/profile/1432960478_922038.jpg', class: 'avatar'
+            .col-md-11
+              %b Test Name
+              %span.text-muted @testuser
+              %span.glyphicon.glyphicon-chevron-down.pull-right.text-muted
+              %p
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+            %hr
+
+    .col-md-3.no-padding
+      .card
+        %h4
+          %strong
+            Who to follow
+        - 3.times do |ntime|
+          %div.twits.clearfix
+            .col-md-3.no-padding
+              = image_tag 'http://endlesstheme.com/Endless1.5.1/img/user2.jpg', class: 'avatar'
+            .col-md-9.no-padding
+              %b Test Name
+              %span.text-muted @testuser
+              %button.btn.btn-info
+                Follow
+            %hr
+      .card.clearfix
+        = image_tag 'http://1.bp.blogspot.com/-EGPqEqrMeK8/UGe6TK9NmNI/AAAAAAAAMK0/HhwHIgYPaJ8/s1600/FBWALL_iphone.jpg', class: 'img-responsive'
+      .card.clearfix
+        = image_tag 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a2f04a46265227.584e9e648ffda.jpg', class: 'img-responsive'

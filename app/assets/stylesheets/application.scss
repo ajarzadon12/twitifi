@@ -66,6 +66,22 @@ body {
                 border: none;
             }
         }
+
+        .nav-user {
+            display: flex;
+            min-height: 46px;
+
+            div {
+                align-self: center;
+            }
+
+            .avatar {
+                height: 35px;
+                width: 35px;
+                border-radius: 50px;
+                border: 1px solid #f2f2f2;
+            }
+        }
     }
 
     .front {
@@ -118,4 +134,8 @@ body {
 
 .no-padding {
     padding: 0px;
+}
+
+.sm-padding {
+    padding: 5px 0px;
 }

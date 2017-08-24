@@ -56,7 +56,10 @@
                   %li
                     %a{:href => "#"} Chtulhu
         - else
-          .col-md-3
-            =link_to 'Sign out', sign_out_path
+          .col-md-3.nav-user
+            .col-md-4
+              = image_tag 'https://pbs.twimg.com/profile_images/527390577411645441/-5ElXiOd_bigger.jpeg', class: 'avatar'
+            .col-md-8.no-padding
+              =link_to 'Sign out', sign_out_path, class: 'btn'
     %div
       = yield
