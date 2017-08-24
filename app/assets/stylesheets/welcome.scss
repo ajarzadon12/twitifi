@@ -1,0 +1,30 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-profile {
+    position: relative;
+    .avatar {
+        height: 80px;
+        width: 80px;
+        border-radius: 50px;
+        border: 3px solid #fff;
+        position: absolute;
+        top: -35px;
+    }
+}
+
+.twits {
+    padding: 5px 0px;
+    border-bottom: 1px solid #d9d9d9;
+    .avatar {
+        border-radius: 50px;
+        border: 3px solid #fff;
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.card {
+    margin: 3px;
+}

@@ -18,6 +18,8 @@ gem "haml-rails", "~> 0.9"
 gem 'mongoid', '~> 6.1.0'
 gem 'bson_ext'
 
+gem 'devise'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rb-readline'

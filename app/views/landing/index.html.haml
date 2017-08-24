@@ -1,0 +1,24 @@
+.front
+  .front-mask
+  
+  .front-bg
+    = image_tag 'bg1.jpg'
+
+.app-content.wrapper
+  .page-content
+    .col-md-7.welcome-text
+      = image_tag 'twitif-wordsonly.png'
+      %br
+      %p
+        Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle.
+    .col-md-5
+      .card.clearfix
+        = render "users/sessions/form"
+
+      .card.clearfix
+        %h4
+          %strong
+            New to Twitifi?
+          Sign up
+        %hr
+        = render "users/registrations/form"

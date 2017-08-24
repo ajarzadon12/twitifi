@@ -14,5 +14,4 @@
 //= require jquery.validate
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require bootstrap
 //= require turbolinks
