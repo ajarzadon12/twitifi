@@ -20,6 +20,8 @@ gem 'bson_ext'
 
 gem 'devise'
 
+gem 'faker'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rb-readline'

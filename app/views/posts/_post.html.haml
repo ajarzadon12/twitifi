@@ -1,0 +1,19 @@
+.card
+    - @posts.each do |post|
+        %div.twits.clearfix
+            .col-md-1.no-padding
+                - if post.user.image_url
+                    = image_tag post.user.image_url, class: 'avatar'
+                - else
+                    = image_tag 'https://s3.amazonaws.com/mypresonus/profile/1432960478_922038.jpg', class: 'avatar'
+            .col-md-11
+                %b= "#{post.user.first_name} #{post.user.last_name}"
+                %span.text-muted= post.user.email
+                .btn-group.pull-right.text-muted
+                    %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+                        %span.glyphicon.glyphicon-chevron-down
+                    %ul.dropdown-menu
+                        %li
+                            = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+                %p= post.text
+            %hr

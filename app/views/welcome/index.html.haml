@@ -30,25 +30,10 @@
           %strong
             Compose new twit
         %hr
-        %textarea.form-control
-        %div.pull-right.sm-padding
-          %span.text-muted 140
-          %button.btn.btn-info
-            Twit
+        = render "posts/form"
+
     .col-md-6.no-padding
-      .card
-        - 30.times do |ntime|
-          %div.twits.clearfix
-            .col-md-1.no-padding
-              = image_tag 'https://s3.amazonaws.com/mypresonus/profile/1432960478_922038.jpg', class: 'avatar'
-            .col-md-11
-              %b Test Name
-              %span.text-muted @testuser
-              %span.glyphicon.glyphicon-chevron-down.pull-right.text-muted
-              %p
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-            %hr
+      = render "posts/post"
 
     .col-md-3.no-padding
       .card
