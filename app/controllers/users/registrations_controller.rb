@@ -10,6 +10,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    resource.image_url = Faker::Avatar.image
+    resource.save
   end
 
   # GET /resource/edit

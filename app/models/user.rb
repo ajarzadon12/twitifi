@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  has_many :posts,    dependent: :destroy
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
@@ -37,6 +38,6 @@ class User
   field :username, type: String, default: ""
   field :first_name, type: String, default: ""
   field :last_name, type: String, default: ""
-
+  field :image_url, type: String, default: ""
   validates :email, :username, presence: true
 end
