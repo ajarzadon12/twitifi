@@ -1,1 +1,12 @@
-= render "form"
+.front
+  .front-mask
+
+  .front-bg
+    = image_tag 'bg1.jpg'
+
+.app-content.wrapper
+  .page-content
+    .col-md-6.col-md-offset-3
+      .card.clearfix
+        %h4= "#{t(:log_in)} Twitifi"
+        = render "form"
