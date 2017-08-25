@@ -19,6 +19,7 @@ gem 'mongoid', '~> 6.1.0'
 gem 'bson_ext'
 
 gem 'devise'
+gem 'mongo_followable'
 
 gem 'faker'
 
