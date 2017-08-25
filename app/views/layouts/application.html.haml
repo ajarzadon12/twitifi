@@ -14,47 +14,47 @@
             - unless user_signed_in?
               %ul.nav.navbar-nav
                 %li.-with-brand
-                  %a
+                  %a{ :href => '/' }
                     = image_tag 'twitif.png', size: '30x30'
                     %strong
-                      Home
+                      = t(:home)
                 %li
-                  %a
+                  %a{ :href => '/about' }
                     %strong
-                      About
+                      = t(:about)
             - else
               %ul.nav.navbar-nav
                 %li
                   %a
                     %span.glyphicon.glyphicon-home
                     %strong
-                      Home
+                      = t(:home)
                 %li
                   %a
                     %span.glyphicon.glyphicon-bell
                     %strong
-                      Notification
+                      = t(:notification)
 
                 %li
                   %a
                     %span.glyphicon.glyphicon-envelope
                     %strong
-                      Messages
+                      = t(:messages)
         - unless user_signed_in?
           .col-md-3
             .i18n-container
-              Languange: 
+              = "#{t(:language)}: "
               .btn-group
                 %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-                  English
+                  = t(:select)
                   %span.caret
                 %ul.dropdown-menu
                   %li
-                    %a{:href => "#"} English
+                    %a{ :href => "#{request.env['PATH_INFO']}?locale=en" } English
                   %li
-                    %a{:href => "#"} Filipino
+                    %a{ :href => "#{request.env['PATH_INFO']}?locale=tl" } Tagalog
                   %li
-                    %a{:href => "#"} Chtulhu
+                    %a{ :href => "#{request.env['PATH_INFO']}?locale=ch" } Chtulhu
         - else
           .col-md-3.nav-user
             .col-md-4

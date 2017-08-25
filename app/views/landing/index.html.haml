@@ -10,7 +10,7 @@
       = image_tag 'twitif-wordsonly.png'
       %br
       %p
-        Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle.
+        = t(:landing_desc)
     .col-md-5
       .card.clearfix
         = render "users/sessions/form"
@@ -18,7 +18,7 @@
       .card.clearfix
         %h4
           %strong
-            New to Twitifi?
+            = "#{t(:new_to)} Twitifi?"
           Sign up
         %hr
         = render "users/registrations/form"
