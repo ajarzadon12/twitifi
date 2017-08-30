@@ -14,7 +14,7 @@
             - unless user_signed_in?
               %ul.nav.navbar-nav
                 %li.-with-brand
-                  %a
+                  %a.active
                     = image_tag 'twitif.png', size: '30x30'
                     %strong
                       Home
@@ -25,7 +25,7 @@
             - else
               %ul.nav.navbar-nav
                 %li
-                  %a
+                  %a.active
                     %span.glyphicon.glyphicon-home
                     %strong
                       Home
