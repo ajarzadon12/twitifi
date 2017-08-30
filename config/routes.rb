@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
     authenticated :user do
       root to: 'welcome#index'
+      get 'profile/index'
     end
 
     root to: 'landing#index'
