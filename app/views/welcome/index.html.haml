@@ -1,30 +1,7 @@
 .app-content
-  .container
+  .container.padding-card
     .col-md-3.no-padding
-      .card.no-padding.clearfix.user-profile
-        %div{style: "height: 100px; background-color: #1DA1F2;"}
-        %div
-          .col-md-4
-            = image_tag 'https://pbs.twimg.com/profile_images/527390577411645441/-5ElXiOd_bigger.jpeg', class: 'avatar'
-          .col-md-8
-            %strong
-              %span Vi Cruz 
-            %br
-            %span.text-muted @vicruz
-            %br
-          .col-md-12
-            .col-md-4
-              %b.text-muted Tweets
-              %b.text-info
-                12
-            .col-md-4
-              %b.text-muted Following
-              %b.text-info
-                12
-            .col-md-4
-              %b.text-muted Followers
-              %b.text-info
-                12
+      = render "profile/profile"
       .card.clearfix
         %h4
           %strong

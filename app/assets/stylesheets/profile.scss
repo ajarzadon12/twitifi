@@ -1,0 +1,52 @@
+// Place all the styles related to the Profile controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-profile {
+    position: relative;
+    .avatar {
+        height: 80px;
+        width: 80px;
+        border-radius: 50px;
+        border: 3px solid #fff;
+        position: absolute;
+        top: -35px;
+
+        &.-big {
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+            top: -110px;
+        }
+    }
+
+    .navbar-nav {
+        li {
+            color: #66757f;
+            a {
+                line-height: 14px;
+                color: #66757f;
+                &.active, &:hover {
+                    box-shadow: inset 0 -2px 0 0 #79E0D1;
+                    color: #79E0D1;
+                }
+            }
+
+            &.-with-brand {
+                a {
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+            }
+        }    
+    }
+}
+
+.head-text {
+    font-size: 12px;
+}
+
+.sub-text {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 3px;
+}
