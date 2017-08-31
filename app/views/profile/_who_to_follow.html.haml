@@ -1,0 +1,11 @@
+%div.twits.clearfix
+  %hr
+  .col-md-3.no-padding
+    = image_tag user.image_url, class: 'avatar'
+  .col-md-9.no-padding
+    %b= user.full_name
+    %span.text-muted= "@#{user.username}"
+    - if current_user.follower_of? user
+      %button.btn.btn-disabled Following
+    - else
+      = button_to 'Follow', {controller: "users", action: "follow", id: user.id}, method: :post, class: 'btn btn-info'

@@ -1,24 +1,22 @@
+- user ||= current_user
 .card.no-padding.clearfix.user-profile
-    %div{style: "height: 100px; background-color: #1DA1F2;"}
-    %div
-        .col-md-4
-            = image_tag 'https://pbs.twimg.com/profile_images/527390577411645441/-5ElXiOd_bigger.jpeg', class: 'avatar'
-        .col-md-8
-            %strong
-                %span Vi Cruz 
-            %br
-            %span.text-muted @vicruz
-            %br
-        .col-md-12
-            .col-md-4
-                %b.text-muted Tweets
-                %b.sub-text
-                    12
-            .col-md-4
-                %b.text-muted Following
-                %b.sub-text
-                    12
-            .col-md-4
-                %b.text-muted Followers
-                %b.sub-text
-                    12
+  %div{style: "height: 100px; background-color: #1DA1F2;"}
+  %div
+    .col-md-4
+      = image_tag user.image_url, class: 'avatar'
+    .col-md-8
+      %strong
+        %span= user.full_name
+      %br
+        %span.text-muted= user.username
+        %br
+    .col-md-12
+      .col-md-4
+        %b.text-muted Twits
+        %b.sub-text= user.posts.count
+      .col-md-4
+        %b.text-muted Following
+        %b.sub-text= user.followees_count
+      .col-md-4
+        %b.text-muted Followers
+        %b.sub-text= user.followers_count
