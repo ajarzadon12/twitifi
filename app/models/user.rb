@@ -2,6 +2,7 @@ class User
   include Mongoid::Document
   include Mongo::Followable::Followed
   include Mongo::Followable::Follower
+  
 
   has_many :posts,    dependent: :destroy
 
@@ -44,4 +45,6 @@ class User
   field :last_name, type: String, default: ""
   field :image_url, type: String, default: ""
   validates :email, :username, presence: true
+
+  
 end
