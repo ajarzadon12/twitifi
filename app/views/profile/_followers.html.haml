@@ -1,14 +1,14 @@
 .card
-    - @followers.each do |followers|
+    - @followers.each do |follower|
         %div.twits.clearfix
             .col-md-1.no-padding
-                - if followers.user.image_url
-                    = image_tag followers.user.image_url, class: 'avatar'
+                - if follower.image_url
+                    = image_tag follower.image_url, class: 'avatar'
                 - else
                     = image_tag 'https://s3.amazonaws.com/mypresonus/profile/1432960478_922038.jpg', class: 'avatar'
             .col-md-11
-                %b= "#{followers.user.first_name} #{followers.user.last_name}"
-                %span.text-muted= followers.user.email
+                %b= "#{follower.first_name} #{follower.last_name}"
+                %span.text-muted= follower.email
                 .btn-group.pull-right.text-muted
                     %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
                         %span.glyphicon.glyphicon-chevron-down
