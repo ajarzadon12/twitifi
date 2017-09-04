@@ -15,11 +15,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml'
 gem "haml-rails", "~> 0.9"
 
-gem 'mongoid', '~> 6.1.0'
+gem 'mongoid','~> 6.1.1'
 gem 'bson_ext'
 
 gem 'devise'
-gem 'mongo_followable'
+gem 'mongo_followable', :git => 'https://github.com/ajarzadon12/mongo_followable.git'
 
 gem 'faker'
 

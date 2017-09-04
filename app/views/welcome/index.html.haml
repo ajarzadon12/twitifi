@@ -10,23 +10,19 @@
         = render "posts/form"
 
     .col-md-6.no-padding
-      = render "posts/post"
+      - if @posts.count > 0
+        = render "posts/post"
+      - else
+        .card
+          %small.strong You are not following anyone.
 
     .col-md-3.no-padding
       .card
         %h4
           %strong
             Who to follow
-        - 3.times do |ntime|
-          %div.twits.clearfix
-            .col-md-3.no-padding
-              = image_tag 'http://endlesstheme.com/Endless1.5.1/img/user2.jpg', class: 'avatar'
-            .col-md-9.no-padding
-              %b Test Name
-              %span.text-muted @testuser
-              %button.btn.btn-info
-                Follow
-            %hr
+        - @users_to_follow.each do |user|
+          = render 'profile/who_to_follow', user: user
       .card.clearfix
         = image_tag 'http://1.bp.blogspot.com/-EGPqEqrMeK8/UGe6TK9NmNI/AAAAAAAAMK0/HhwHIgYPaJ8/s1600/FBWALL_iphone.jpg', class: 'img-responsive'
       .card.clearfix

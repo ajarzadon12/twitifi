@@ -1,10 +1,10 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
   include Mongo::Followable::Followed
   include Mongo::Followable::Follower
-  
 
-  has_many :posts,    dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
@@ -46,5 +46,7 @@ class User
   field :image_url, type: String, default: ""
   validates :email, :username, presence: true
 
-  
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

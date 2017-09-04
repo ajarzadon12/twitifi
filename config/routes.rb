@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :posts
-  get 'welcome/index'
-  get 'landing/index'
+
+  resources :users do
+    member do
+      post :follow
+      delete :unfollow
+    end
+  end
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
