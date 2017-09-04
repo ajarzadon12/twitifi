@@ -1,13 +1,17 @@
-class UsersController < ApplicationController
+class Controller < ApplicationController
   before_action :set_user, only: [:follow, :unfollow]
 
   def follow
-    current_user.follow(@user)
+    unless current_user.follower_of? @user
+      current_user.follow @user
+    end
     redirect_to :back
   end
 
   def unfollow
-    current_user.unfollow(@user)
+    if current_user.follower_of? @user
+      current_user.unfollow @user
+    end
     redirect_to :back
   end
 

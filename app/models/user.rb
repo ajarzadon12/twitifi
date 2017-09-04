@@ -1,8 +1,8 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
   include Mongo::Followable::Followed
   include Mongo::Followable::Follower
-  include Mongo::Followable::History
 
   has_many :posts, dependent: :destroy
 
