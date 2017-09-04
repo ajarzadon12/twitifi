@@ -4,26 +4,26 @@
     .col-md-12
       = image_tag 'https://pbs.twimg.com/profile_images/527390577411645441/-5ElXiOd_bigger.jpeg', class: 'avatar -big'
     .col-md-9.col-md-offset-3
-      %ul.nav.navbar-nav
+      %ul.nav.navbar-nav{ role: "tablist" }
         %li
-          %a.active
+          %a.active{"aria-controls" => "home", "data-toggle" => "tab", :href => "#home", :role => "tab"} 
             %strong.head-text.text-muted
-              Twitsss
+              Twits
             .sub-text.text-center
-              12
+              =@posts.count
         %li
-          %a
+          %a{"aria-controls" => "following", "data-toggle" => "tab", :href => "#following", :role => "tab"} 
             %strong.head-text.text-muted
               Following
             .sub-text.text-center
-              12
-
+              =current_user.followees_count
+              
         %li
-          %a
+          %a{"aria-controls" => "followers", "data-toggle" => "tab", :href => "#followers", :role => "tab"} 
             %strong.head-text.text-muted
               Followers
             .sub-text.text-center
-              12
+              =current_user.followers_count
       %div{style: "padding-top:15px;"}
         =link_to 'Edit Profile', sign_out_path, class: 'btn pull-right'
 
@@ -31,13 +31,21 @@
   .col-md-3.no-padding
     %br
     %h3
-      %b
-        virmel cruz
+      %b=(current_user.first_name + " " + current_user.last_name)
     %span.text-muted
-      @virmelcruz
+      =current_user.email
 
   .col-md-6.no-padding
-    = render "posts/post"
+  
+    .tab-content
+      #home.tab-pane.active{ role: "tabpanel" }
+        = render 'posts/post'
+      #following.tab-pane{ role: "tabpanel" }
+        = render "following"
+      #followers.tab-pane{ role: "tabpanel" }
+        = render "followers"
+
+    
 
   .col-md-3.no-padding
     .card
