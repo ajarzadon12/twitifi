@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do
       post :follow
       delete :unfollow
+      delete :remove_follower
     end
   end
 
