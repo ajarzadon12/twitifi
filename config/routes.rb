@@ -25,8 +25,9 @@ Rails.application.routes.draw do
     end
 
     authenticated :user do
+      match 'profile(/:username)' => 'profile#index', via: [:get], as: 'profile'
+
       root to: 'welcome#index'
-      get 'profile/index'
     end
 
     root to: 'landing#index'

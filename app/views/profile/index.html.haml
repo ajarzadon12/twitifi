@@ -1,8 +1,9 @@
+- @user ||= current_user
 .card.no-padding.clearfix.user-profile{style: "margin: 0px; box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);"}
   %div{style: "height: 320px; background-color: #1DA1F2;"}
   .container
     .col-md-12
-      = image_tag 'https://pbs.twimg.com/profile_images/527390577411645441/-5ElXiOd_bigger.jpeg', class: 'avatar -big'
+      = image_tag @user.image_url, class: 'avatar -big'
     .col-md-9.col-md-offset-3
       %ul.nav.navbar-nav{ role: "tablist" }
         %li
@@ -16,14 +17,14 @@
             %strong.head-text.text-muted
               Following
             .sub-text.text-center
-              =current_user.followees_count
+              =@user.followees_count
               
         %li
           %a{"aria-controls" => "followers", "data-toggle" => "tab", :href => "#followers", :role => "tab"} 
             %strong.head-text.text-muted
               Followers
             .sub-text.text-center
-              =current_user.followers_count
+              =@user.followers_count
       %div{style: "padding-top:15px;"}
         =link_to 'Edit Profile', sign_out_path, class: 'btn pull-right'
 
@@ -31,9 +32,9 @@
   .col-md-3.no-padding
     %br
     %h3
-      %b=(current_user.first_name + " " + current_user.last_name)
+      %b= @user.full_name
     %span.text-muted
-      =current_user.email
+      =@user.email
 
   .col-md-6.no-padding
   
