@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :posts
 
-  resources :users do
+  resources :follow do
     member do
       post :follow
       delete :unfollow

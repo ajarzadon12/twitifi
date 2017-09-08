@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class FollowController < ApplicationController
   before_action :set_user, only: [:follow, :unfollow, :remove_follower]
 
   def follow

@@ -9,4 +9,4 @@
     - if current_user.follower_of? user
       %button.btn.btn-disabled Following
     - else
-      = button_to 'Follow', follow_user_path(user), method: :post, class: 'btn btn-info'
+      = button_to 'Follow', follow_follow_path(user), method: :post, class: 'btn btn-info'
