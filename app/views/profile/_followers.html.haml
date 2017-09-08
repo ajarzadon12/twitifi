@@ -14,6 +14,6 @@
                         %span.glyphicon.glyphicon-chevron-down
                     %ul.dropdown-menu
                         %li
-                            = link_to 'Remove', remove_follower_user_path(follower), :method => :delete, :data => { :confirm => 'Are you sure?' }
+                            = link_to 'Remove', remove_follower_follow_path(follower), :method => :delete, :data => { :confirm => 'Are you sure?' }
                 
             %hr
