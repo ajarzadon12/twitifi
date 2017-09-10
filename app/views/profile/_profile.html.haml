@@ -6,7 +6,8 @@
       = image_tag user.image_url, class: 'avatar'
     .col-md-8
       %strong
-        %span= user.full_name
+        %a{href: profile_path}
+          %span= user.full_name
       %br
         %span.text-muted= user.username
         %br

@@ -7,7 +7,8 @@
                 - else
                     = image_tag 'https://s3.amazonaws.com/mypresonus/profile/1432960478_922038.jpg', class: 'avatar'
             .col-md-11
-                %b= "#{follower.first_name} #{follower.last_name}"
+                = link_to "/profile/#{follower.username}" do
+                    %b= "#{follower.first_name} #{follower.last_name}"
                 %span.text-muted= follower.email
                 .btn-group.pull-right.text-muted
                     %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
